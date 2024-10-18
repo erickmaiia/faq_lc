@@ -1,0 +1,43 @@
+---
+import logo from "../../public/favicon.png";
+---
+
+<header>
+  <a href="/"> <img src={logo.src} alt="Logo do Projeto" /></a>
+  <a href="./sobre" class="btn-about">Quem somos nós</a>
+</header>
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  header img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-about {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .btn-about:hover {
+    background-color: #0056b3;
+  }
+</style>

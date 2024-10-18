@@ -1,0 +1,59 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FaqList from "../components/FaqList.astro";
+import logo from "../../public/favicon.png";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="icon" type="image" href={logo.src} sizes="192x192" />
+    <title>FAQ - Linha de chegada</title>
+  </head>
+  <body>
+    <Header />
+    <div>
+      <main id="faq-main">
+        <h1>Perguntas frequentes</h1>
+        <FaqList />
+      </main>
+      <Footer />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const main = document.getElementById("faq-main");
+        if (main) {
+          main.classList.add("visible"); // Torna o main visível
+        }
+
+        const links = document.querySelectorAll("nav a"); // Seleciona todos os links na navegação
+
+        links.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita o comportamento padrão do link
+            const targetUrl = link.getAttribute("href"); // Obtém o URL do link
+
+            if (main) {
+              main.classList.remove("visible"); // Remove a classe para iniciar a transição
+            }
+
+            setTimeout(() => {
+              if (targetUrl) {
+                window.location.href = targetUrl; // Redireciona após a transição
+              }
+            }, 500); // Tempo igual ao da transição CSS
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

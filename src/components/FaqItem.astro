@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import MarkdownRenderer from "./MarkdownRenderer.astro";
+
+const posts = await getCollection("faq");
+---
+
+{
+  posts.map((post: any) => (
+    <details class="faq-item">
+      <summary>
+        {post.data.title}
+        <span class="toggle-icon">+</span>
+      </summary>
+      <div class="faq-content">
+        <MarkdownRenderer content={post.body} />
+      </div>
+    </details>
+  ))
+}
+
+<style>
+  .faq-item {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: default; /* Cursor padrão para toda a área do item */
+  }
+
+  .faq-item summary {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+    user-select: none; /* Evita que o texto seja selecionado */
+    cursor: pointer; /* Cursor pointer apenas na parte do summary */
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none; /* Remove a seta padrão */
+  }
+
+  .faq-item p {
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  .toggle-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+    user-select: none; /* Evita a seleção do ícone */
+  }
+
+  .faq-item[open] .toggle-icon {
+    transform: rotate(45deg);
+  }
+
+  /* Animação suave ao abrir e fechar o conteúdo */
+  .faq-content {
+    height: 0; /* Começa com altura 0 quando fechado */
+    opacity: 0; /* Inicia invisível */
+    overflow: hidden; /* Esconde o conteúdo que excede a altura */
+    transition:
+      height 0.4s ease,
+      opacity 0.4s ease; /* Transições suaves */
+  }
+
+  /* Exibir o conteúdo quando o item estiver aberto */
+  .faq-item[open] .faq-content {
+    height: auto; /* A altura se ajusta ao conteúdo */
+    opacity: 1; /* Mantém a opacidade visível */
+  }
+</style>

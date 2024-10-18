@@ -1,0 +1,9 @@
+---
+// MarkdownRenderer.astro
+import { marked } from "marked";
+
+const { content } = Astro.props; // Obter o conteúdo passado como propriedade
+---
+
+<!-- Renderizar o conteúdo em HTML -->
+<div set:html={await marked(content)} />

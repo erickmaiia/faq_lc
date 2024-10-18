@@ -1,0 +1,94 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import logo from "../../public/favicon.png";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="icon" type="image" href={logo.src} sizes="192x192" />
+    <title>Sobre - Linha de Chegada</title>
+  </head>
+  <body>
+    <Header />
+    <div>
+      <main id="about-main">
+        <button class="back-button" onclick="javascript:history.back()">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <section class="about-section">
+          <img
+            src={logo.src}
+            alt="Logo do Projeto Linha de Chegada"
+            class="logo"
+          />
+          <h1>Sobre o Projeto Linha de Chegada</h1>
+          <div class="about">
+            <p>
+              O Projeto Linha de Chegada, do Campus UFC-Russas, foi criado para
+              auxiliar alunos que estão próximos da formatura nos cursos de
+              Ciência da Computação, Engenharia Civil, Engenharia de Produção,
+              Engenharia de Software e Engenharia Mecânica.
+            </p>
+            <p>
+              Reconhecendo as dificuldades enfrentadas por muitos estudantes em
+              relação à realização de Atividades Complementares, Estágios
+              Curriculares Supervisionados e a elaboração do Trabalho de
+              Conclusão de Curso (TCC), o projeto oferece suporte e
+              acompanhamento prático.
+            </p>
+            <p>
+              Através da formação de bolsistas, buscamos esclarecer processos
+              burocráticos e proporcionar orientações sobre cronogramas e
+              requisitos acadêmicos.
+            </p>
+          </div>
+          <div class="mission">
+            <p>
+              Nossa missão é maximizar o número de concludentes, garantindo que
+              os alunos tenham as ferramentas e o conhecimento necessários para
+              completar suas formações com sucesso e no tempo adequado.
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const main = document.getElementById("about-main");
+        if (main) {
+          main.classList.add("visible"); // Torna o main visível
+        }
+
+        const links = document.querySelectorAll("nav a"); // Seleciona todos os links na navegação
+
+        links.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita o comportamento padrão do link
+            const targetUrl = link.getAttribute("href"); // Obtém o URL do link
+
+            if (main) {
+              main.classList.remove("visible"); // Remove a classe para iniciar a transição
+            }
+
+            setTimeout(() => {
+              if (targetUrl) {
+                window.location.href = targetUrl; // Redireciona após a transição
+              }
+            }, 500); // Tempo igual ao da transição CSS
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
