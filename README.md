@@ -1,47 +1,25 @@
-# Astro Starter Kit: Minimal
+# FAQ do Projeto Linha de Chegada
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Este projeto é um site de FAQ desenvolvido em Astro para o projeto **Linha de Chegada (LC)** da Universidade Federal do Ceará - Campus Russas. O objetivo do site é fornecer um acesso rápido e centralizado a respostas sobre dúvidas acadêmicas comuns, servindo como um suporte eficiente e acessível para os estudantes universitários.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+![Astro Logo](https://astro.build/assets/press/astro-logo-dark.svg)
+> **Imagem:** Logo do Astro, a tecnologia principal utilizada para o desenvolvimento do FAQ.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Objetivo
 
-## 🚀 Project Structure
+O site FAQ visa atender às principais dúvidas relacionadas a procedimentos acadêmicos como:
+- Trabalho de Conclusão de Curso (TCC)
+- Atividades Complementares
+- Estágios e outros assuntos acadêmicos
 
-Inside of your Astro project, you'll see the following folders and files:
+Através da coleta de dados realizada com os estudantes, identificamos as dúvidas mais frequentes e organizamos as informações em uma base de conhecimento útil para a comunidade acadêmica.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Tecnologias Utilizadas
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+O projeto foi desenvolvido com **Astro**, uma ferramenta que permite a criação de sites rápidos e eficientes, com foco em interfaces otimizadas para navegadores. Astro é ideal para sites estáticos e dinâmicos, proporcionando uma navegação fluida e intuitiva.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Funcionalidades
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Uso de `map` para renderizar perguntas e respostas dinamicamente.
+- Integração de **arquivos Markdown** como componentes, garantindo flexibilidade na adição e atualização de conteúdo.
+- Estrutura de fácil navegação, com seções categorizadas para uma consulta rápida.
