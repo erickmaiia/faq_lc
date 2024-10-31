@@ -2,8 +2,7 @@
 
 Este projeto é um site de FAQ desenvolvido em Astro para o projeto **Linha de Chegada (LC)** da Universidade Federal do Ceará - Campus Russas. O objetivo do site é fornecer um acesso rápido e centralizado a respostas sobre dúvidas acadêmicas comuns, servindo como um suporte eficiente e acessível para os estudantes universitários.
 
-![Astro Logo](https://astro.build/assets/press/astro-logo-dark.svg)
-> **Imagem:** Logo do Astro, a tecnologia principal utilizada para o desenvolvimento do FAQ.
+![Astro Logo](https://astro.build/assets/press/astro-logo-light-gradient.svg)
 
 ## Objetivo
 
